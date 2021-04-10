@@ -1,8 +1,10 @@
 <template>
-  <div className="container-bg-image z-10 bg-cover w-screen h-screen">
+  <div
+    className="container-bg-image z-10 bg-cover relative overflow-hidden w-screen h-screen"
+  >
+    <Countdown />
     <AnimateElon />
     <SidebarTemp />
-    <Countdown />
     <SearchBar />
   </div>
 </template>
@@ -10,16 +12,24 @@
 <script>
 import SidebarTemp from "./components/sidebar";
 import SearchBar from "./components/search-bar";
-import Countdown from "./components/countdown";
 import AnimateElon from "./components/animate-elon";
+import Countdown from "./components/countdown";
 
 export default {
   name: "App",
   components: {
     SidebarTemp,
     SearchBar,
-    Countdown,
     AnimateElon,
+    Countdown,
+  },
+  methods: {
+    show() {
+      this.$modal.show("my-first-modal");
+    },
+  },
+  mount() {
+    this.show();
   },
 };
 </script>
@@ -28,6 +38,7 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,6 +1,75 @@
+<style scoped> to limit css to file
+
+pass props ~ :title or v-bind:title
+declare types ~ props: {days: {type: String}}
+
+vue 2:  <h1 slot="header">Title</h1>
+vue 3:  <template #header>
+
+= create alias for yarn serve =
+= need to get vue plugs for vim =
+= get commenting out working for vue = 
+= make my snippets work for vue files =
+
+%% = countdown lib =
+dataOfTheDay needs to be lifted. We could use some state management lib
+ref: https://blog.logrocket.com/using-vuex-4-with-vue-3/
+=== Vuex ===
+mutation: Mutation methods must be synchronous
+using getters in vue component example:
+       computed: {...Vuex.mapGetters(["doubleCount"]) }//in html put: {{doubleCount}}
+actions: for asynchronous
+actions example:
+  mutations: {
+    selectDate(state, payload) {
+      state.count = payload;
+    },
+  },
+  actions: {
+    async getDataByDate({commit, state}) {
+        const storyByDate = await fetchStoryByDate();
+    context.commit("selectDate", storyByDate);
+    }
+  }
+use dispatch in component to call action: this.$store.dispatch("getAnswer");
+
+
+=== terminology ===
+mounted: componentDidMount
+created: componentWillMount good for async operations
+ example ~ created: async function () {
+            this.dataOfTheDay = await fetchDataOfTheDay();
+           },
+watch: useEffect
+computed: static function - no async here, caches results. (other than that it's same as method)
+computed is by default getter-only but you have a setter: computed: { fullName: {get: ..., set: ...}}
+method: template will ref to functions within, does not cache and runs always on re-render
+
+watch vs computed for observing:
+watch is an imparative approach imparatively (angular approach). Update data() prop based on another prop in data(). watch is mostly good for async operations.
+computed simply returns props and is reactive on state change
+
+@click: onClick
+@hover: onHover
+if in template: <div v-if="users">{{ users }}</div> user is in return statement
+
+
+seperate fetching fuctions out into seperate file
+
+%% do this to call method:
+%% /* this.fetchSolData(); */
+
+set up functionality to query data for:
+- mars pressure sol
+https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
+- picture taken by date (search by date. Use a library for this)
+- https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-04-07
+
+make all the features work before styling
+all querying will be in a seperate directory
 
 responsiveness
-elon animate it
+= elon animate it =
 
 make sure I use tailwind
 = make sure tailwind is working =
