@@ -1,0 +1,15 @@
+
+responsiveness
+elon animate it
+
+make sure I use tailwind
+= make sure tailwind is working =
+
+= create reusable component =
+
+= wrapper comp =
+= <slot /> = children in react =
+= creating container =
+
+keep hello world for ref
+https://api.nasa.gov/
