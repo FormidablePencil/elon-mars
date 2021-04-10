@@ -1,5 +1,5 @@
 import Vuex from "vuex";
-import { fetchMarsInfo, fetchStoryByDate } from "./functions/fetching.ts";
+import { fetchMarsInfo, fetchStoryByDate } from "./functions/fetching";
 
 const store = new Vuex.Store({
   state: {
@@ -13,7 +13,7 @@ const store = new Vuex.Store({
     },
     async getMarsInfo({ state }) {
       console.log("hit");
-.      state.marsInfo = await fetchMarsInfo();
+      state.marsInfo = await fetchMarsInfo();
     },
   },
 });

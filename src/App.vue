@@ -14,7 +14,6 @@ import SidebarTemp from "./components/sidebar";
 import SearchBar from "./components/search-bar";
 import AnimateElon from "./components/animate-elon";
 import Countdown from "./components/countdown";
-import store from "./store";
 
 export default {
   name: "App",
@@ -24,13 +23,10 @@ export default {
     AnimateElon,
     Countdown,
   },
-  methods: {
-    show() {},
+  methods: {},
+  create() {
+    this.$store.dispatch["getMarsInfo"];
   },
-  created() {
-    this.$store.dispatch("getMarsInfo");
-  },
-  store,
 };
 </script>
 
@@ -38,7 +34,6 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

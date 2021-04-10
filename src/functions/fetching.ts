@@ -6,7 +6,7 @@ export const fetchMarsInfo = async () => {
   return await res.json();
 };
 
-export const fetchStoryByDate = async (date) => {
+export const fetchStoryByDate = async (date: string) => {
   const res = await fetch(
     `https://api.nasa.gov/planetary/apod?api_key=${process.env.VUE_APP_NASA_KEY}&date=${date}` //exmp 2021-04-07
   );
