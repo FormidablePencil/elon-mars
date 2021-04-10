@@ -14,6 +14,7 @@ import SidebarTemp from "./components/sidebar";
 import SearchBar from "./components/search-bar";
 import AnimateElon from "./components/animate-elon";
 import Countdown from "./components/countdown";
+import store from "./store";
 
 export default {
   name: "App",
@@ -24,13 +25,12 @@ export default {
     Countdown,
   },
   methods: {
-    show() {
-      this.$modal.show("my-first-modal");
-    },
+    show() {},
   },
-  mount() {
-    this.show();
+  created() {
+    this.$store.dispatch("getMarsInfo");
   },
+  store,
 };
 </script>
 

@@ -1,9 +1,8 @@
 <template>
-  <div className="bg-bg-light opacity-50 w-64 h-screen">{{ solData }}</div>
+  <div className="bg-bg-light opacity-50 w-64 h-screen">{{ getMarsInfo }}</div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -15,9 +14,8 @@ export default {
     };
   },
   computed: {
-    renderSolData() {
-      console.log(this.solData);
-      return this.solData;
+    getMarsInfo() {
+      return this.$store.state.marsInfo;
     },
   },
   watch: {},

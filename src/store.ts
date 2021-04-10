@@ -12,15 +12,10 @@ const store = new Vuex.Store({
       state.storyByDate = await fetchStoryByDate(payload);
     },
     async getMarsInfo({ state }) {
-      state.marsInfo = await fetchMarsInfo();
+      console.log("hit");
+.      state.marsInfo = await fetchMarsInfo();
     },
   },
-  // use getter to get only certain values from API...
-  // getters: { // here for reference
-  //   doubleCount: (state) => {
-  //     return state.count * 2;
-  //   },
 });
-
 
 export default store;

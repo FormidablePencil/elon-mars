@@ -3,19 +3,25 @@
 pass props ~ :title or v-bind:title
 declare types ~ props: {days: {type: String}}
 
-vue 2:  <h1 slot="header">Title</h1>
-vue 3:  <template #header>
-
 = create alias for yarn serve =
 = need to get vue plugs for vim =
 = get commenting out working for vue = 
 = make my snippets work for vue files =
 
 %% = countdown lib =
-dataOfTheDay needs to be lifted. We could use some state management lib
-ref: https://blog.logrocket.com/using-vuex-4-with-vue-3/
+= dataOfTheDay needs to be lifted. We could use some state management lib =
+
 === Vuex ===
+ref: https://blog.logrocket.com/using-vuex-4-with-vue-3/
+doc Vuex.Store: https://vuex.vuejs.org/api/#vuex-store
+modules: muliple store
 mutation: Mutation methods must be synchronous
+getter:
+  // use getter to get only certain values from API...
+  // getters: { // here for reference
+  //   doubleCount: (state) => {
+  //     return state.count * 2;
+  //   },
 using getters in vue component example:
        computed: {...Vuex.mapGetters(["doubleCount"]) }//in html put: {{doubleCount}}
 actions: for asynchronous
@@ -53,6 +59,10 @@ computed simply returns props and is reactive on state change
 @hover: onHover
 if in template: <div v-if="users">{{ users }}</div> user is in return statement
 
+vue 2:  <h1 slot="header">Title</h1>
+vue 3:  <template #header>
+
+vue add @vue/typescript
 
 seperate fetching fuctions out into seperate file
 
