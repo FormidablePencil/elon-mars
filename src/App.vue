@@ -1,12 +1,19 @@
 <template>
-  <div
-    className="container-bg-image z-10 bg-cover relative overflow-hidden w-screen h-screen"
-  >
-    <Countdown />
-    <AnimateElon />
-    <SidebarTemp />
-    <SearchBar />
-    <PrimeVue />
+  <div>
+    <img
+      className="top-0 absolute w-screen h-screen"
+      v-bind:src="storyByDate?.url"
+      :alt="storyByDate?.title"
+    />
+    <div
+      className="-bg-image z-10 bg-cover relative overflow-hidden w-screen h-screen"
+    >
+      <Countdown />
+      <AnimateElon />
+      <SidebarTemp />
+      <SearchBar />
+      <PrimeVue />
+    </div>
   </div>
 </template>
 
@@ -15,6 +22,7 @@ import SidebarTemp from "./components/sidebar";
 import SearchBar from "./components/search-bar";
 import AnimateElon from "./components/animate-elon";
 import Countdown from "./components/countdown";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
@@ -24,9 +32,17 @@ export default {
     AnimateElon,
     Countdown,
   },
-  methods: {},
+  data() {
+    return {};
+  },
   created() {
     this.$store.dispatch("getMarsInfo");
+  },
+  computed: {
+    ...mapState(["storyByDate"]),
+    test() {
+      return this.storyByDate;
+    },
   },
 };
 </script>

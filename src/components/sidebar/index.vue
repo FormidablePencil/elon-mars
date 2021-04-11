@@ -3,7 +3,7 @@
     className="transitionSideBar noScrollBar bg-bg-reg w-80 h-screen overflow-scroll"
   >
     <h2
-      className="transitionSideBarContent text-primary-light text-xl font-medium mt-5"
+      className="dividerBottom transitionSideBarContent text-primary-light text-xl font-medium mt-5"
     >
       Living Conditions on Mars
     </h2>

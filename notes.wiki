@@ -1,3 +1,10 @@
+- depending on the media type render either image or vid
+- mars stats disappear and content from api appears in place of it. Countdown becomes invisible along with elon.
+- button to go back to elon musk
+- responsiveness
+And that should be it
+%% - after 10 seconds of load transition to anther bg-image.
+
 how would use pass payload down a func. It's needed for when mapping data in html. Sidebar is where it was needed
 
 Listen to global store and update the values in scoped component when a specific value changes:

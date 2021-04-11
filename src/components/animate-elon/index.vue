@@ -10,9 +10,9 @@
 .bg-position {
   object-position: 0% 0%;
   opacity: 0;
-  animation: bg-anim 4s 1s;
+  animation: bg-anim 4s 2s;
   animation-fill-mode: forwards;
-  pointer-events: none
+  pointer-events: none;
 }
 
 @keyframes bg-anim {
