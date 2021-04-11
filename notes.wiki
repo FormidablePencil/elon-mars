@@ -1,3 +1,7 @@
+how would use pass payload down a func. It's needed for when mapping data in html. Sidebar is where it was needed
+
+Listen to global store and update the values in scoped component when a specific value changes:
+computed: {...mapState(["marsInfo"])}
 
 <p v-if="isOpen">is open></p>
 <p v-else>is closed</p>

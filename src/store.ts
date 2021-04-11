@@ -11,7 +11,6 @@ const store = new Vuex.Store({
   actions: {
     async getStoryByDate({ state }, payload) {
       const data = await fetchStoryByDate(payload);
-      console.log(data, 'sas')
       if (data) state.storyByDate = data;
       else {
         state.FAILEDstoryByDate = true;

@@ -1,17 +1,18 @@
 <template>
   <img
-    className="absolute object-cover bg-position w-screen h-screen top-10"
+    className="absolute object-cover z-10 bg-position w-screen h-screen top-10"
     src="../../assets/elon-musk.png"
     alt="elon musk"
   />
 </template>
 
-<style>
+<style scoped>
 .bg-position {
   object-position: 0% 0%;
   opacity: 0;
   animation: bg-anim 4s 1s;
   animation-fill-mode: forwards;
+  pointer-events: none
 }
 
 @keyframes bg-anim {

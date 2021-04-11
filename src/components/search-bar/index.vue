@@ -1,6 +1,6 @@
 <template>
   <div
-    className="w-screen absolute bottom-0 flex flex-col justify-center items-center h-24 bg-grey-50"
+    className="w-screen absolute z-20 bottom-0 flex flex-col justify-center items-center h-24 bg-grey-50"
   >
     <div
       className="lgShadow widthLarge justify-around items-center pl-2 h-12 bg-white flex rounded-full"
