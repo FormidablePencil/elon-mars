@@ -5,13 +5,19 @@
       v-bind:key="time"
       v-for="time in times"
     >
-      <p className="font-semibold text-gray-600">{{ time.value }}</p>
+      <p className="font-semibold text-xl text-gray-600">{{ time.value }}</p>
     </li>
   </div>
 </template>
 
 <script>
+import { calcTime, timerCount } from "./counterLogic";
+
 export default {
+  props: {
+    startTime: String,
+    endTime: String,
+  },
   data() {
     return {
       times: [
@@ -21,24 +27,19 @@ export default {
         { title: "minutes", value: 0 },
         { title: "seconds", value: 0 },
       ],
+      start: new Date(this.startTime).getTime(),
+      end: new Date(this.endTime).getTime(),
     };
   },
   mounted() {
-    this.calcTime(100000000000);
+    this.timerCount(this.start, this.end);
     this.interval = setInterval(() => {
       this.timerCount(this.start, this.end);
     }, 1000);
   },
   methods: {
-    calcTime: function (time) {
-      this.times[0].value = Math.floor(time / (1000 * 60 * 60 * 24));
-      this.times[1].value = Math.floor(time / (1000 * 60 * 60 * 24));
-      this.times[2].value = Math.floor(
-        (time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      this.times[3].value = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-      this.times[4].value = Math.floor((time % (1000 * 60)) / 1000);
-    },
+    calcTime,
+    timerCount,
   },
 };
 </script>

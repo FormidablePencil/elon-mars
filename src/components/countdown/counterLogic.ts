@@ -1,26 +1,26 @@
-export default function timerCount(start, end) {
-  // Get todays date and time
+export function timerCount(this: any, start: number, end: number) {
   const now = new Date().getTime();
-
-  // Find the distance between now an the count down date
   const distance = start - now;
   const passTime = end - now;
 
   if (distance < 0 && passTime < 0) {
-    this.message = this.wordString.expired;
-    this.statusType = "expired";
-    this.statusText = this.wordString.status.expired;
     clearInterval(this.interval);
     return;
   } else if (distance < 0 && passTime > 0) {
     this.calcTime(passTime);
-    this.message = this.wordString.running;
-    this.statusType = "running";
-    this.statusText = this.wordString.status.running;
   } else if (distance > 0 && passTime > 0) {
     this.calcTime(distance);
-    this.message = this.wordString.upcoming;
-    this.statusType = "upcoming";
-    this.statusText = this.wordString.status.upcoming;
   }
+}
+
+export function calcTime(this: any, time: any) {
+  this.times[0].value = Math.floor(time / (1000 * 60 * 60 * 24) / 365);
+  this.times[1].value = Math.floor(
+    (time % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)
+  );
+  this.times[2].value = Math.floor(
+    (time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  this.times[3].value = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  this.times[4].value = Math.floor((time % (1000 * 60)) / 1000);
 }
