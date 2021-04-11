@@ -46,6 +46,10 @@ body {
   margin: 0;
   padding: 0;
 }
+li {
+  list-style-type: none;
+  padding: 0;
+}
 .container-bg-image {
   background-image: url("./assets/bgImage.jpg");
 }

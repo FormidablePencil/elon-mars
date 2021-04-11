@@ -1,4 +1,7 @@
 
+<p v-if="isOpen">is open></p>
+<p v-else>is closed</p>
+<li v-for='detail in details'>{{detail.main}}</li>
 
 %% search storyByDate feature:
 %% - dropdown for day month and year
