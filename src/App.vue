@@ -1,20 +1,11 @@
 <template>
-  <div>
-    <img
-      className="top-0 absolute w-screen h-screen"
-      v-bind:src="storyByDate?.url"
-      :alt="storyByDate?.title"
-    />
-    <div
-      className="-bg-image z-10 bg-cover relative overflow-hidden w-screen h-screen"
-    >
-      <Countdown />
-      <AnimateElon />
-      <SidebarTemp />
-      <SearchBar />
-      <PrimeVue />
-    </div>
-  </div>
+  <StoryByDateWrapper>
+    <Countdown />
+    <AnimateElon />
+    <SidebarTemp />
+    <SearchBar />
+    <PrimeVue />
+  </StoryByDateWrapper>
 </template>
 
 <script>
@@ -22,11 +13,12 @@ import SidebarTemp from "./components/sidebar";
 import SearchBar from "./components/search-bar";
 import AnimateElon from "./components/animate-elon";
 import Countdown from "./components/countdown";
-import { mapState } from "vuex";
+import StoryByDateWrapper from "./components/story-by-date-wrapper";
 
 export default {
   name: "App",
   components: {
+    StoryByDateWrapper,
     SidebarTemp,
     SearchBar,
     AnimateElon,
@@ -37,12 +29,6 @@ export default {
   },
   created() {
     this.$store.dispatch("getMarsInfo");
-  },
-  computed: {
-    ...mapState(["storyByDate"]),
-    test() {
-      return this.storyByDate;
-    },
   },
 };
 </script>
@@ -58,6 +44,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+html {
+  background-color: black;
+}
 body {
   margin: 0;
   padding: 0;
@@ -65,8 +54,5 @@ body {
 li {
   list-style-type: none;
   padding: 0;
-}
-.container-bg-image {
-  background-image: url("./assets/bgImage.jpg");
 }
 </style>

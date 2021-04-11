@@ -1,3 +1,15 @@
+
+
+uninstall usless packages
+
+:className="`animate-pulse transform translate-y-${
+
+Readme.md
+- create a reference point where I used watch correctly
+Github
+Netlify
+Figma
+
 - depending on the media type render either image or vid
 - mars stats disappear and content from api appears in place of it. Countdown becomes invisible along with elon.
 - button to go back to elon musk
@@ -63,12 +75,13 @@ use dispatch in component to call action: this.$store.dispatch("getAnswer");
 
 
 === terminology ===
-mounted: componentDidMount
-created: componentWillMount good for async operations
+mounted(): componentDidMount
+created(): componentWillMount good for async operations
  example ~ created: async function () {
             this.dataOfTheDay = await fetchDataOfTheDay();
            },
-watch: useEffect
+watch: useEffect (name the function whatever value you are wanting to listen to in data())
+  watch: {  storyByDate(newValue, oldValue) {
 computed: static function - no async here, caches results. (other than that it's same as method)
 computed is by default getter-only but you have a setter: computed: { fullName: {get: ..., set: ...}}
 method: template will ref to functions within, does not cache and runs always on re-render
@@ -81,8 +94,9 @@ computed simply returns props and is reactive on state change
 @hover: onHover
 if in template: <div v-if="users">{{ users }}</div> user is in return statement
 
-vue 2:  <h1 slot="header">Title</h1>
-vue 3:  <template #header>
+<slot/>
+<header></header><main></main><footer></footer>
+<slot name='first'> <template v-slot:header>
 
 vue add @vue/typescript
 

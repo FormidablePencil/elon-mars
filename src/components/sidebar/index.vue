@@ -1,6 +1,6 @@
 <template>
   <div
-    className="transitionSideBar noScrollBar bg-bg-reg w-80 h-screen overflow-scroll"
+    className="transitionSideBar z-10 noScrollBar bg-bg-reg w-80 h-screen overflow-scroll"
   >
     <h2
       className="dividerBottom transitionSideBarContent text-primary-light text-xl font-medium mt-5"
