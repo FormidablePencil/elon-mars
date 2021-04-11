@@ -6,10 +6,19 @@ const store = new Vuex.Store({
     selectedDate: 0,
     marsInfo: null,
     storyByDate: null,
+    FAILEDstoryByDate: false,
   },
   actions: {
     async getStoryByDate({ state }, payload) {
-      state.storyByDate = await fetchStoryByDate(payload);
+      const data = await fetchStoryByDate(payload);
+      console.log(data, 'sas')
+      if (data) state.storyByDate = data;
+      else {
+        state.FAILEDstoryByDate = true;
+        setTimeout(() => {
+          state.FAILEDstoryByDate = false;
+        }, 3000);
+      }
     },
     async getMarsInfo({ state }) {
       console.log("hit");

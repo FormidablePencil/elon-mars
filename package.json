@@ -12,6 +12,8 @@
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
     "postcss": "^7",
+    "primeicons": "^4.1.0",
+    "primevue": "^3.3.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^3.0.0",
     "vue-carousel": "^0.18.0",

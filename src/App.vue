@@ -6,6 +6,7 @@
     <AnimateElon />
     <SidebarTemp />
     <SearchBar />
+    <PrimeVue />
   </div>
 </template>
 
@@ -24,8 +25,8 @@ export default {
     Countdown,
   },
   methods: {},
-  create() {
-    this.$store.dispatch["getMarsInfo"];
+  created() {
+    this.$store.dispatch("getMarsInfo");
   },
 };
 </script>

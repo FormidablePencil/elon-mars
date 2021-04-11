@@ -1,3 +1,11 @@
+
+
+%% search storyByDate feature:
+%% - dropdown for day month and year
+%%   - generate selections
+
+add some error handling for when fetching data fails
+
 <style scoped> to limit css to file
 
 pass props ~ :title or v-bind:title
@@ -55,7 +63,7 @@ watch vs computed for observing:
 watch is an imparative approach imparatively (angular approach). Update data() prop based on another prop in data(). watch is mostly good for async operations.
 computed simply returns props and is reactive on state change
 
-@click: onClick
+@click="getStoryByDate()"
 @hover: onHover
 if in template: <div v-if="users">{{ users }}</div> user is in return statement
 
