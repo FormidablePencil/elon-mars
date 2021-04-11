@@ -3,18 +3,18 @@
     className="w-screen absolute bottom-0 flex flex-col justify-center items-center h-24 bg-grey-50"
   >
     <div
-      className="lgShadow widthLarge justify-around items-center h-12 bg-white flex rounded-full"
+      className="lgShadow widthLarge justify-around items-center pl-2 h-12 bg-white flex rounded-full"
     >
       <label for="stories">Explore what's been on the horizon </label>
       <input
-        className="focus:outline-none bg-yellow-100 h-full pl-1"
+        className="focus:outline-none bg-primary-light h-full pl-1"
         v-model="date"
         type="date"
         id="stories"
       />
       <button
         @click="getStoryByDate()"
-        className="btnActive px-7 py-1 rounded-full focus:outline-none bg-yellow-300 hover:bg-yellow-200"
+        className="btnActive px-7 py-1 rounded-full focus:outline-none text-white bg-primary-med hover:bg-primary-reg"
       >
         Search
       </button>
@@ -58,7 +58,7 @@ export default {
 </script>
 <style scoped>
 .btnActive:active {
-  background: #dfbc43;
+  background: #A97761;
 }
 
 .lgShadow {
