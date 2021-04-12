@@ -4,7 +4,7 @@
       <transition name="fade">
         <img
           v-if="toggleImgElement"
-          className="w-screen h-screen absolute top-0"
+          className="object-cover w-screen h-screen absolute top-0"
           :src="imageInFirst"
           :alt="storyByDate?.title"
         />
@@ -13,7 +13,7 @@
       <transition name="fade">
         <img
           v-if="!toggleImgElement"
-          className="w-screen h-screen absolute top-0"
+          className="object-cover w-screen h-screen absolute top-0"
           :src="imageInSecond"
           :alt="storyByDate?.title"
         />
