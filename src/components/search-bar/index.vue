@@ -42,7 +42,6 @@ export default {
   watch() {},
   methods: {
     getStoryByDate() {
-      console.log("sds ");
       this.$store.dispatch("getStoryByDate", this.date);
     },
   },

@@ -12,6 +12,5 @@ export const fetchStoryByDate = async (date: string) => {
   );
   if (res.status !== 200) return console.log(res.status);
   const data = await res.json();
-  console.log(data, "d");
   return data;
 };

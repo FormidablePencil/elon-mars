@@ -30,7 +30,6 @@ const store = new Vuex.Store({
       }
     },
     async getMarsInfo({ state }) {
-      console.log("hit");
       state.marsInfo = await fetchMarsInfo();
     },
   },

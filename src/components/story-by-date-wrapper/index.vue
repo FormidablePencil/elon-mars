@@ -44,7 +44,6 @@ export default {
   methods: {
     youtubeVIdId() {
       const id = getYouTubeID(this.storyByDate.url);
-      console.log(id, "id?");
       return id;
     },
   },

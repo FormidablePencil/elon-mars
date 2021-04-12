@@ -4,7 +4,6 @@
     <AnimateElon />
     <SidebarTemp />
     <SearchBar />
-    <PrimeVue />
   </StoryByDateWrapper>
 </template>
 

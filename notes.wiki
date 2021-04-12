@@ -1,3 +1,7 @@
+change meta data
+title, description
+
+crop elon img
 mobile friendly
 side effcts
 

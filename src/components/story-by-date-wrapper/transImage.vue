@@ -51,15 +51,7 @@ export default {
         }
         if (this.toggleImgElement) this.imageInFirst = this.storyByDate.url;
         else this.imageInSecond = this.storyByDate.url;
-        console.log(
-          `Updating from ${this.imageInFirst} to ${this.imageInSecond}`
-        );
       }
-    },
-  },
-  methods: {
-    test() {
-      console.log("git", this.toggleImgElement);
     },
   },
 };

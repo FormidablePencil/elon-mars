@@ -11,7 +11,6 @@
 <script>
 export default {
   props: {
-    marsInfo: { required: true },
     storyByDate: { required: true },
   },
   computed: {
