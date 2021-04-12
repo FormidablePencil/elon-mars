@@ -4,9 +4,19 @@ import { fetchMarsInfo, fetchStoryByDate } from "./functions/fetching";
 const store = new Vuex.Store({
   state: {
     selectedDate: 0,
-    marsInfo: null,
-    storyByDate: null,
+    marsInfo: "",
+    storyByDate: "",
     FAILEDstoryByDate: false,
+  },
+  mutations: {
+    deleteStory: (state) => {
+      state.storyByDate = "";
+    },
+  },
+  getters: {
+    storyByDate: (state) => {
+      return state.storyByDate;
+    },
   },
   actions: {
     async getStoryByDate({ state }, payload) {

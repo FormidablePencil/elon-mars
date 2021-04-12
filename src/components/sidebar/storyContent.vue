@@ -3,7 +3,6 @@
     <div v-if="storyByDate" className="absolute top-16 w-80 h-screen flex">
       <div className="text-left pr-1">
         <p>{{ storyByDate.explanation }}</p>
-        <p>{{ storyByDate.copyright }}</p>
       </div>
     </div>
   </transition>

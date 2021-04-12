@@ -57,9 +57,6 @@ export default {
 };
 </script>
 <style scoped>
-.btnActive:active {
-  background: #A97761;
-}
 
 .lgShadow {
   box-shadow: 10px 10px 62px 7px rgba(0, 0, 0, 0.75);

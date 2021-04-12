@@ -19,6 +19,15 @@
     <MarsContent :marsInfo="marsInfo" :storyByDate="storyByDate" />
     <StoryContent :storyByDate="storyByDate" />
   </div>
+  <transition name="fade">
+    <button
+      v-if="storyByDate"
+      @click="deleteStory"
+      class="absolute z-50 bottom-12 right-10 bg-yellow-400 hover:bg-yellow-300 focus:outline-none btnActive w-28 h-8 rounded-2xl shadow-xl"
+    >
+      Back
+    </button>
+  </transition>
 </template>
 
 <script>
@@ -36,6 +45,11 @@ export default {
   computed: {
     ...mapState(["marsInfo", "storyByDate"]),
   },
+  methods: {
+    deleteStory: function () {
+      this.$store.commit("deleteStory");
+    },
+  },
 };
 </script>
 <style>
@@ -49,7 +63,6 @@ export default {
   transform: translateX(-400px);
   transition: transform 1s 500ms;
 }
-
 .transitionSideBar {
   transform: translateX(-400px);
   animation: bg-anim 1.5s 500ms;
