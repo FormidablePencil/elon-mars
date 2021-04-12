@@ -55,4 +55,9 @@ li {
   list-style-type: none;
   padding: 0;
 }
+.dividerBottom {
+  border: 0px solid #f3ded9;
+  border-bottom-width: 1px;
+  width: 90%;
+}
 </style>

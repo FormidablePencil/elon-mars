@@ -3,76 +3,51 @@
     className="transitionSideBar z-10 noScrollBar bg-bg-reg w-80 h-screen overflow-scroll"
   >
     <h2
-      className="dividerBottom transitionSideBarContent text-primary-light text-xl font-medium mt-5"
+      className="dividerBottom specificBgColor transitionSideBarContent text-primary-light text-xl font-medium mt-5 w-full h-7 bg-orange-700 rounded-r-lg overflow-hidden"
     >
-      Living Conditions on Mars
+      <transition name="fade">
+        <p className="absolute top-0 left-3" v-if="!storyByDate">
+          Living Conditions on Mars
+        </p>
+      </transition>
+      <transition name="fade">
+        <p className="absolute top-0 left-3" v-if="storyByDate">
+          {{ storyByDate.title }}
+        </p>
+      </transition>
     </h2>
-    <li
-      className="transitionSideBarContent flex flex-1 flex-col justify-evenly items-center bg-bg-ligher z-0 h-40 mx-12 my-6 px-2 rounded-lg shadow-lg"
-      v-bind:key="sol"
-      v-for="sol in getSolKeys"
-    >
-      <p>{{ marsInfo[sol].First_UTC }}</p>
-      <p>sol {{ sol }}</p>
-      <h3 className="dividerBottom">Pressure (Pa)</h3>
-
-      <div className="flex w-full justify-evenly">
-        <div>
-          <h4>Max.</h4>
-          <p>{{ Math.floor(marsInfo[sol].PRE.av) }}</p>
-        </div>
-        <div>
-          <h4>Min.</h4>
-          <p>{{ Math.floor(marsInfo[sol].PRE.mn) }}</p>
-        </div>
-        <div>
-          <h4>Avg.</h4>
-          <p>{{ Math.floor(marsInfo[sol].PRE.mx) }}</p>
-        </div>
-      </div>
-    </li>
+    <MarsContent :marsInfo="marsInfo" :storyByDate="storyByDate" />
+    <StoryContent :storyByDate="storyByDate" />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import MarsContent from "./marsContent.vue";
+import StoryContent from "./storyContent";
 
 export default {
+  components: { MarsContent, StoryContent },
   data() {
     return {
-      loading: false,
-      users: null,
-      error: null,
       solData: [],
     };
   },
   computed: {
-    ...mapState(["marsInfo"]),
-    getSolKeys() {
-      return this.$store.state.marsInfo?.sol_keys;
-    },
+    ...mapState(["marsInfo", "storyByDate"]),
   },
-  methods: {},
 };
 </script>
-<style scoped>
+<style>
 .noScrollBar::-webkit-scrollbar {
   display: none;
 }
-h3,
-h4 {
-  font-weight: 500;
-  color: #fffdf8;
+.specificBgColor {
+  background: rgba(255, 255, 255, 0.4);
 }
-
-p {
-  color: #f6e3de;
-}
-
-.dividerBottom {
-  border: 0px solid #f3ded9;
-  border-bottom-width: 1px;
-  width: 90%;
+.smoothTransition {
+  transform: translateX(-400px);
+  transition: transform 1s 500ms;
 }
 
 .transitionSideBar {
@@ -83,6 +58,12 @@ p {
 
 .transitionSideBarContent {
   transform: translateX(-400px);
+  animation-fill-mode: forwards;
+}
+
+.transitionOutSideBarContent {
+  transform: translateX(0);
+  animation: bg-anim-reverse 1.5s 500ms;
   animation-fill-mode: forwards;
 }
 
@@ -107,6 +88,14 @@ p {
   animation-fill-mode: forwards;
 }
 
+@keyframes bg-anim-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-400px);
+  }
+}
 @keyframes bg-anim {
   0% {
     transform: translateX(-400px);
