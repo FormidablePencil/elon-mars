@@ -5,7 +5,7 @@ crop elon img
 mobile friendly
 side effcts
 
-uninstall usless packages
+= uninstall usless packages =
 
 :className="`animate-pulse transform translate-y-${
 
